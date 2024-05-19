@@ -55,7 +55,7 @@ const App = () => {
     formData.append('image', file);
 
     try {
-      const res = await axios.post('https://real-time-chat-backend.vercel.app/upload', formData, {
+      const res = await axios.post('https://real-time-chat-backend.vercel.app/uploads', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
