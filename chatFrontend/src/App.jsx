@@ -4,7 +4,7 @@ import axios from 'axios';
 import Chat from './components/Chat';
 import './App.css'
 
-const socket = io('http://localhost:4000');
+const socket = io('https://real-time-chat-backend.vercel.app/');
 
 const App = () => {
   const [username, setUsername] = useState('');
