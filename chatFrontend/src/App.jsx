@@ -4,7 +4,7 @@ import axios from 'axios';
 import Chat from './components/Chat';
 import './App.css';
 
-const socket = io('https://real-time-chat-backend.vercel.app/');
+const socket = io('https://real-time-chat-backend.vercel.app');
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -55,7 +55,7 @@ const App = () => {
     formData.append('image', file);
 
     try {
-      const res = await axios.post('https://real-time-chat-backend.vercel.app/uploads', formData, {
+      const res = await axios.post('https://real-time-chat-backend.vercel.app/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
