@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import axios from 'axios';
 import Chat from './components/Chat';
-import './App.css';
+import './App.css'
 
-const socket = io('https://real-time-chat-backend.vercel.app');
+const socket = io('http://localhost:4000');
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -55,7 +55,7 @@ const App = () => {
     formData.append('image', file);
 
     try {
-      const res = await axios.post('https://real-time-chat-backend.vercel.app/uploads', formData, {
+      const res = await axios.post('http://localhost:4000/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -89,8 +89,8 @@ const App = () => {
           </button>
         </div>
       ) : (
-        <div className="flex flex-col h-full w-full max-w-xl mx-auto bg-white shadow-lg rounded-lg p-4">
-          <h1 className="text-xl mb-4">Sala {room}</h1>
+        <div className="flex flex-col h-full w-full max-w-xl mx-auto bg-white shadow-2xl rounded-lg p-4">
+          <h1 className="text-3xl mb-4 font-semibold">Sala {room}</h1>
           <Chat messages={messages} username={username} />
           <div className="mt-4 flex">
             <input
